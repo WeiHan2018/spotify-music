@@ -23,6 +23,16 @@ export class SpotifyService {
 
     let queryUrl = `${this.BASE_URL}/search?${params}`;
 
+    return this.search(queryUrl);
+  }
+
+  searchArtist(artistId: string): Observable<any> {
+    let queryUrl = `${this.BASE_URL}/artists/${artistId}`;
+
+    return this.search(queryUrl);
+  }
+
+  search(queryUrl: string): Observable<any> {
     const apiKey = SpotifyAPIKey;
     const headers = new Headers({
       Authorization: `Bearer ${apiKey}`
