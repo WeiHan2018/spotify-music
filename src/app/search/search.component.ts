@@ -9,7 +9,7 @@ import { SpotifyService } from '../spotify.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchText: string;
+  searchText: string = '';
   tracksInfo: any;
 
   constructor(private spotifyService: SpotifyService) {
