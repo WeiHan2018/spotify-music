@@ -32,6 +32,12 @@ export class SpotifyService {
     return this.search(queryUrl);
   }
 
+  searchTrackDetail(trackId: string): Observable<any> {
+    let queryUrl = `${this.BASE_URL}/tracks/${trackId}`;
+    
+    return this.search(queryUrl);
+  }
+
   search(queryUrl: string): Observable<any> {
     const apiKey = SpotifyAPIKey;
     const headers = new Headers({
